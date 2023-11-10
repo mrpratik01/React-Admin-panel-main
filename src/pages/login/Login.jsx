@@ -2,35 +2,27 @@ import React, { useState } from "react";
 import { Box, TextField, Button, Typography } from "@mui/material";
 import "./login.scss";
 import { Link } from "react-router-dom";
-import axios from "axios"
-
+import axios from "axios";
 
 const Login = () => {
-  const [loginData, setLoginData] = useState()
+  const [loginData, setLoginData] = useState();
 
   const handleLogin = async () => {
+    try {
+      const res = await axios.post("/login-admin", loginData);
 
-    try{
-      const res = await axios.post("/login-admin", loginData)
- 
-      console.log(res.data)
- 
-     }
-     catch (err) {
-       console.log(err)
- 
-     }
-
-
-  }
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleChange = (e) => {
     setLoginData((pre) => ({
-      ...pre,[e.target.name] : e.target.value
-    }
-    ))
-
-  }
+      ...pre,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
     <div>
       <form>
@@ -54,14 +46,14 @@ const Login = () => {
           <Typography variant="h2" padding={3} textAlign="center">
             Login
           </Typography>
-         
+
           <TextField
             margin="normal"
             type={"email"}
             variant="outlined"
             placeholder="Email"
             onChange={handleChange}
-            name = "email"
+            name="email"
           ></TextField>
           <TextField
             margin="normal"
@@ -69,28 +61,21 @@ const Login = () => {
             variant="outlined"
             placeholder="password"
             onChange={handleChange}
-            name = "email"
+            name="email"
           ></TextField>
           <Button
             sx={{ marginTop: 3, borderRadius: 3 }}
             variant="contained"
             color={"warning"}
-            onClick= {handleLogin}
+            onClick={handleLogin}
           >
             Login
           </Button>
-        
 
-          <Link to="/register" style={{textDecoration: 'none'}}>
-            
-            <Button
-            sx={{ marginTop: 3, borderRadius: 3 }}
-        
-          
-          >
-            Register Now !
-          </Button>
-        
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <Button sx={{ marginTop: 3, borderRadius: 3 }}>
+              Register Now !
+            </Button>
           </Link>
         </Box>
       </form>

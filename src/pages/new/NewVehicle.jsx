@@ -11,11 +11,10 @@ const NewVehicle = ({ inputs, title }) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  console.log(userData)
+  console.log(userData);
   const submitButton = async () => {
     try {
-    
-        console.log(userData)
+      console.log(userData);
       const res = await axios.post("/create-vehicle", userData);
 
       console.log(res.data);

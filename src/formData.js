@@ -28,12 +28,9 @@ export const userInputs = [
     type: "password",
     placeholder: "Enter your password",
   },
-
-
 ];
 
 export const vehicleInputs = [
-
   {
     id: 1,
     label: "  Vehicle Name",
@@ -43,77 +40,76 @@ export const vehicleInputs = [
   },
   {
     id: 2,
-    label: "Brands",
-    name: "brands",
+    label: "vehicle Description",
+    name: "vehicleDesc",
     type: "text",
-    placeholder: "Brands",
+    placeholder: "vehicle Description",
   },
   {
     id: 3,
-    label: "price / hr",
-    name: "price",
+    label: "Vehicle Price",
+    name: "vehiclePrice",
     type: "text",
-    placeholder: "price / hr",
+    placeholder: "vehicle Price",
   },
   {
     id: 4,
-    label: "In Stock",
-    name: "stock",
+    label: "Vehicle Type",
+    name: "vehicleType",
     type: "text",
-    placeholder: "In Stock",
+    placeholder: "vehicle Type",
+  },
+  {
+    id: 5,
+    label: "KM",
+    name: "km",
+    type: "text",
+    placeholder: "Kilometer",
+  },
+  {
+    id: 6,
+    label: "fuel",
+    name: "fuel",
+    type: "text",
+    placeholder: "Fuel",
+  },
+  {
+    id: 7,
+    label: "Seats",
+    name: "seats",
+    type: "text",
+    placeholder: "seats",
+  },
+  {
+    id: 8,
+    label: "Vehicle Image",
+    name: "vehicleImage",
+    type: "text",
+    placeholder: "Vehicle Image",
   },
 ];
-
 
 export const orderInputs = [
   {
     id: 1,
-    label: "package Description",
-    name: "packageDescription",
+    label: "Title",
+    name: "title",
     type: "text",
-    placeholder: "Package Description",
+    placeholder: "Title",
   },
   {
     id: 2,
-    label: "Pickup Address",
-    name: "pickup_address",
+    label: "Body",
+    name: "body",
     type: "text",
-    placeholder: "Pickup Address",
-  },
-  {
-    id: 3,
-    label: "Drop-off Address",
-    name: "dropoff_address",
-    type: "text",
-    placeholder: "Drop-Off Address",
-  },
-  {
-    id: 4,
-    label: "Category",
-    name: "package_category",
-    type: "text",
-    placeholder: "Category",
-  },
-  {
-    id: 5,
-    label: "Weight",
-    name: "weight",
-    type: "text",
-    placeholder: "weight",
-  },
-  {
-    id: 6,
-    label: "Total km",
-    name: "kilometer",
-    type: "text",
-    placeholder: "Total Km",
-  },
-  {
-    id: 6,
-    label: "user Id",
-    name: "user_id",
-    type: "text",
-    placeholder: "User ID",
+    placeholder: "Body",
   },
 
+  {
+    id: 5,
+    label: "Image",
+    name: "image",
+    type: "text",
+    placeholder: "Image",
+  },
 ];

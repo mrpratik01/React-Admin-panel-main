@@ -22,8 +22,8 @@ const Product = () => {
               <span className="link">Add New </span>
             </Link>
           </div>
-          <VehicleCard></VehicleCard>
         </div>
+        <Productable></Productable>
       </div>
     </div>
   );

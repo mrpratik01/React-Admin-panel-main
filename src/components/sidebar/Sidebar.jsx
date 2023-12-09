@@ -18,7 +18,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">365 Logistics</span>
+          <span className="logo">Let's Drive </span>
         </Link>
       </div>
       <hr />
@@ -51,18 +51,11 @@ const Sidebar = () => {
           <Link to="/order" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardOutlinedIcon className="icon" />
-              <span>Orders</span>
+              <span>Blogs</span>
             </li>
           </Link>
 
-          {/* <li>
-            <DnsOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li> */}
-
-          {/* <p className="title">USER INTERFACE</p> */}
-
-          <Link to="/login" style={{textDecoration:"none"}}>
+          <Link to="/login" style={{ textDecoration: "none" }}>
             <li>
               <ExitToAppOutlinedIcon className="icon" />
               <span>Logout</span>

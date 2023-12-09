@@ -6,101 +6,60 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./list.scss";
+import Button from "@mui/material/Button";
 import axios from "axios";
-
-
-
-
-
-// const rows = [
-//   {
-//     id: 1,
-//     packageDescription: "Bootels",
-//     PickupAddress: "Jhapa, damak",
-//     DropOffAddress: "jhapa, Birtamod",
-//     category: "Plastic",
-//     amount: 1200,
-//     method: "Cash on Delivery",
-//     status: "Approved",
-//   },
-//   {
-//     id: 2,
-//     packageDescription: "Beer",
-//     PickupAddress: "Jhapa, damak",
-//     DropOffAddress: "jhapa, Birtamod",
-//     category: "Plastic",
-//     amount: 1200,
-//     method: "Cash on Delivery",
-//     status: "Approved",
-//   },
-//   {
-//     id: 3,
-//     packageDescription: "Sugarcane",
-//     PickupAddress: "Jhapa, damak",
-//     DropOffAddress: "jhapa, Birtamod",
-//     category: "Plastic",
-//     amount: 1200,
-//     method: "Cash on Delivery",
-//     status: "Approved",
-//   },
-//   {
-//     id: 4,
-//     packageDescription: "Trouser",
-//     PickupAddress: "Jhapa, damak",
-//     DropOffAddress: "jhapa, Birtamod",
-//     category: "Plastic",
-//     amount: 1200,
-//     method: "Cash on Delivery",
-//     status: "Approved",
-//   },
-// ];
+import "./list.scss";
 
 const List = () => {
-
   const [credential, setCredential] = useState([]);
 
   useEffect(() => {
     axios
-      .get("/packages")
-      .then((res) => setCredential(res.data.result))
+      .get("/blog/get-blogs")
+      .then((res) => setCredential(res.data))
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(credential);
+  const handleEdit = (id) => {
+    // Implement edit functionality here
+    console.log(`Edit blog with ID ${id}`);
+  };
 
-
-
+  const handleDelete = (id) => {
+    // Implement delete functionality here
+    console.log(`Delete blog with ID ${id}`);
+  };
 
   return (
     <div className="list">
-
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell className="tableCell">Package ID</TableCell>
-              <TableCell className="tableCell">Package Description</TableCell>
-              <TableCell className="tableCell">Pickup Address</TableCell>
-              <TableCell className="tableCell">Drop-off Address</TableCell>
-              <TableCell className="tableCell">category</TableCell>
-              <TableCell className="tableCell">Weight</TableCell>
-              <TableCell className="tableCell">Amount</TableCell>
-              <TableCell className="tableCell">Total Km</TableCell>
+              <TableCell className="tableCell">Blog ID</TableCell>
+              <TableCell className="tableCell">Title</TableCell>
+              <TableCell className="tableCell">Body</TableCell>
+              <TableCell className="tableCell">Created At</TableCell>
+              <TableCell className="tableCell">Updated At</TableCell>
+              <TableCell className="tableCell">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {credential.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell className="tableCell">{row.package_id}</TableCell>
-                <TableCell className="tableCell">{row.packagedescription}</TableCell>
-                <TableCell className="tableCell">{row.pickup_address}</TableCell>
-                <TableCell className="tableCell">{row.dropoff_address}</TableCell>
-                <TableCell className="tableCell">{row.package_category}</TableCell>
-                <TableCell className="tableCell">{row.weight}</TableCell>
-                <TableCell className="tableCell">{row.amount}</TableCell>
+              <TableRow key={row._id}>
+                <TableCell className="tableCell">{row._id}</TableCell>
+                <TableCell className="tableCell">{row.title}</TableCell>
+                <TableCell className="tableCell">{row.body}</TableCell>
+                <TableCell className="tableCell">{row.createdAt}</TableCell>
+                <TableCell className="tableCell">{row.updatedAt}</TableCell>
                 <TableCell className="tableCell">
-                  <span className={`status ${row.status}`}>{row.totalkm}</span>
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    onClick={() => handleDelete(row._id)}
+                  >
+                    Delete
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}

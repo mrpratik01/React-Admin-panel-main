@@ -21,7 +21,7 @@ const Productable = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/vehicle/get-vehicles")
+      .get("https://api.letsdrive.com.np/vehicle/get-all-vehicles")
       .then((res) => setCredential(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -56,7 +56,9 @@ const Productable = () => {
                 <TableRow key={row.partNumber}>
                   <TableCell className="tableCell">{row._id}</TableCell>
                   <TableCell className="tableCell">{row.vehicleName}</TableCell>
-                  <TableCell className="tableCell">{row.vehicleDesc}</TableCell>
+                  <TableCell className="tableCellBody">
+                    {row.vehicleDesc}
+                  </TableCell>
                   <TableCell className="tableCell">
                     {row.vehiclePrice}
                   </TableCell>

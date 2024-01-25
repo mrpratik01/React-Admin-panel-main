@@ -5,9 +5,6 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/Widget";
 import List from "../../components/list/List";
 
-
-
-
 import "./home.scss";
 
 const Home = () => {
@@ -18,15 +15,12 @@ const Home = () => {
         <div className="homeContainer">
           <Navbar />
           <div className="widgets">
-            <Widget type="customer" />
             <Widget type="order" />
             <Widget type="earnings" />
             <Widget type="balance" />
           </div>
 
-          
           <List></List>
-          
 
           {/* <div className="charts">
             <Featured />

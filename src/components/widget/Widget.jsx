@@ -7,32 +7,15 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import "./widget.scss";
 
 const Widget = ({ type }) => {
-
-
-
-
   let data;
   // temp
 
   const diff = 30;
 
   switch (type) {
-    case "customer":
-      data = {
-        title: "CUSTOMERS",
-        amount: 10,
-        link: "See details",
-        icon: (
-          <PersonOutlineOutlinedIcon
-            className="icon"
-            style={{ color: "crimson", backgroundColor: "#ff000033" }}
-          />
-        ),
-      };
-      break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Vehicle",
         amount: 16,
         link: "View all orders",
         icon: (
@@ -45,8 +28,8 @@ const Widget = ({ type }) => {
       break;
     case "earnings":
       data = {
-        title: "Vehicle",
-        amount: 7,
+        title: "Booking",
+        amount: 14,
         link: "View Details",
         icon: (
           <MonetizationOnOutlinedIcon
@@ -58,8 +41,8 @@ const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "wallet",
-        amount: 900,
+        title: "Blog",
+        amount: 8,
         link: "Wallet Amount",
         icon: (
           <AccountBalanceWalletOutlinedIcon
@@ -78,9 +61,7 @@ const Widget = ({ type }) => {
     <div className="widget">
       <div className="left">
         <span className="title">{data.title}</span>
-        <span className="counter">
-          {data.amount}
-        </span>
+        <span className="counter">{data.amount}</span>
         <span className="link">{data.link}</span>
       </div>
       <div className="right">

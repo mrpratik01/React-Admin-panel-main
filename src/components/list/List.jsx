@@ -15,7 +15,7 @@ const List = () => {
 
   useEffect(() => {
     axios
-      .get("/blog/get-blogs")
+      .get("https://api.letsdrive.com.np/blog/get-blogs")
       .then((res) => setCredential(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -39,8 +39,8 @@ const List = () => {
               <TableCell className="tableCell">Blog ID</TableCell>
               <TableCell className="tableCell">Title</TableCell>
               <TableCell className="tableCell">Body</TableCell>
-              <TableCell className="tableCell">Created At</TableCell>
-              <TableCell className="tableCell">Updated At</TableCell>
+              <TableCell className="tableCell">Image</TableCell>
+
               <TableCell className="tableCell">Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -49,9 +49,9 @@ const List = () => {
               <TableRow key={row._id}>
                 <TableCell className="tableCell">{row._id}</TableCell>
                 <TableCell className="tableCell">{row.title}</TableCell>
-                <TableCell className="tableCell">{row.body}</TableCell>
-                <TableCell className="tableCell">{row.createdAt}</TableCell>
-                <TableCell className="tableCell">{row.updatedAt}</TableCell>
+                <TableCell className="tableCellBody">{row.body}</TableCell>
+                <TableCell className="tableCell">{row.image}</TableCell>
+
                 <TableCell className="tableCell">
                   <Button
                     variant="outlined"
